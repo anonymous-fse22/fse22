@@ -1,11 +1,22 @@
-# Shadow Mutations
+# Mutation Analysis with Execution Taints
 
 Run `make` to run the full evaluation. The command `make test`, runs the tests.
-While, `make <subject>` runs the evaluation for a subjects file matching `examples/<subject>.py`.
+To evaluate individual subjects, `make <subject>` runs the evaluation for a subjects file matching `examples/<subject>.py`.
 
-Adding a new subject, is done by adding a file matching the above path.
-As this is a prototype, the subjects will have to be quite limited.
+## Adding new examples / subjects
 
-If there is a error like: 
-"Unknown file: {file_name}, add it to the top of shadow.py"
-If the file should be ignored or counted towards the tool files, add it to the respective list.
+Adding a new subject is done by adding a file matching the above path.
+As this is a prototype, the subjects need to be a subset of python.
+A line can only contain one operation, e.g.:
+- `a = a + 1` is allowed
+- `a = (a / 2) + 1` is not allowed
+
+Augmenting statements are currently not allowed:
+- `a += 1` is not allowed
+- `a = a + 1` is allowed
+
+All code needs to be containted in the provided example, no external code or libraries are supported.
+
+A function where the name starts with `test_` is not mutated.
+
+See the existing examples in the examples folder for possible starting points.
