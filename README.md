@@ -20,3 +20,5 @@ All code needs to be containted in the provided example, no external code or lib
 A function where the name starts with `test_` is not mutated.
 
 See the existing examples in the examples folder for possible starting points.
+
+We have a limited in-browser playground set up [here](https://anonymous-fse22.github.io/fse22/playground/lab/index.html).
