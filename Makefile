@@ -5,7 +5,7 @@ export PYTHONPATH := $(shell pwd):$(PYTHONPATH)
 EXAMPLES := $(wildcard examples/*.py)
 SUBJECTS := $(notdir $(EXAMPLES:.py=))
 
-all: test $(SUBJECTS) tables
+all: test $(SUBJECTS)
 
 clean:
 	rm -rf tmp
@@ -38,7 +38,4 @@ test-split-variants:
 
 tmp:
 	mkdir -p tmp
-
-tables:
-	python3 print_tables.py
 
